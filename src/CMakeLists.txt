@@ -1,0 +1,1 @@
+target_sources(AJBLib PUBLIC AJBLib.cpp)
