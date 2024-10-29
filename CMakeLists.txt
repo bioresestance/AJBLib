@@ -6,10 +6,8 @@ add_library(AJBLib)
 add_subdirectory(src) # src contains all of the lib code.
 target_link_directories(AJBLib PUBLIC inc)
 
-# Option to enable/disable unit tests
-# option(ENABLE_TESTS "Enable unit tests" OFF)
 
-# if(ENABLE_TESTS)
+if(ENABLE_UNITTESTS)
     enable_testing()
     add_subdirectory(test)
-# endif()
+endif()
