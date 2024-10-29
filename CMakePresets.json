@@ -45,6 +45,18 @@
             "description": "",
             "displayName": "Build for Debug",
             "configurePreset": "linux-debug"
+        },
+        {
+            "name": "Release",
+            "description": "",
+            "displayName": "Build for Release",
+            "configurePreset": "linux-release"
+        },
+        {
+            "name": "Unittest",
+            "description": "",
+            "displayName": "Build for Unittest",
+            "configurePreset": "linux-unittest"
         }
     ],
     "testPresets": []

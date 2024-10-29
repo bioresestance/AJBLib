@@ -1,0 +1,31 @@
+name: Run unit tests on Linux
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: Bacondish2023/setup-googletest@v1
+        with:
+          tag: v1.14.0
+
+      - name: Configure CMake
+        run: cmake --preset=linux-unittest
+
+      - name: Build
+        run: cmake --build --preset=Unittest
+
+      - name: Run tests
+        run: ctest --test-dir build/linux-unittest/
